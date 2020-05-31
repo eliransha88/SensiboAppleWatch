@@ -16,7 +16,7 @@ class SensiboAPI {
     lazy var baseURL : String = "https://home.sensibo.com/api/v2/"
     
     // TODO : enter api key
-    let apiKey = "<apikey>"
+    let apiKey = "<apiKey>"
     
     enum Paths  {
         case devices

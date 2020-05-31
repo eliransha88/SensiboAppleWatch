@@ -11,6 +11,7 @@ import WatchKit
 
 class DevicesInterfaceController: WKInterfaceController {
 
+    @IBOutlet weak var refershDevices: WKInterfaceButton!
     @IBOutlet weak var devicesTableView: WKInterfaceTable!
     
     var devices : [SmartAC]! {
@@ -19,26 +20,27 @@ class DevicesInterfaceController: WKInterfaceController {
         }
     }
     
-     override func awake(withContext context: Any?) {
-         super.awake(withContext: context)
-         // Configure interface objects here.
-        
-        
-         SensiboAPI.instance.getDevices { (result) in
-              switch result {
-              case .success(let object) :
+    private func getDevices() {
+        SensiboAPI.instance.getDevices { result in
+            switch result {
+            case .success(let object) :
                 self.devices = object
-              case .failure(let error) :
-                  print(error)
-                  self.presentAlert(withTitle: "", message: error.stringValue() , preferredStyle: .alert, actions: [WKAlertAction.init(title:"OK" , style: .default, handler: {})])
-              }
-          }
+            case .failure(let error) :
+                print(error)
+                self.presentAlert(withTitle: "", message: error.stringValue() , preferredStyle: .alert, actions: [WKAlertAction.init(title:"OK" , style: .default, handler: {})])
+            }
+        }
+    }
+    
+    override func awake(withContext context: Any?) {
+         super.awake(withContext: context)
+        
      }
      
      override func willActivate() {
          // This method is called when watch view controller is about to be visible to user
          super.willActivate()
-
+         getDevices()
      }
      
     func loadTableData()
@@ -54,11 +56,12 @@ class DevicesInterfaceController: WKInterfaceController {
     
     
     override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
-
-            return devices[rowIndex]
-
+        return devices[rowIndex]
     }
     
+    @IBAction func refreshDevices() {
+        getDevices()
+    }
 }
 
 

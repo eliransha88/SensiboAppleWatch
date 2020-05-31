@@ -24,6 +24,8 @@ class ACRemoteInterfaceController: WKInterfaceController {
     
     let tampArray : [Int] = Array(16...32)
     
+    var backFromSelection: Bool = false
+    
     var smartAC : SmartAC! {
         didSet {
             updateUI()
@@ -37,15 +39,29 @@ class ACRemoteInterfaceController: WKInterfaceController {
         if context is SmartAC {
             smartAC = context as? SmartAC
         }
-        
-        
-        
     }
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-
+        if !backFromSelection {
+            getDevice()
+        } else {
+            backFromSelection.toggle()
+        }
+    }
+    
+    private func getDevice() {
+        guard smartAC != nil else { return }
+        SensiboAPI.instance.getDevice(by: smartAC.id) { result in
+            switch result {
+            case let .success(object):
+                self.smartAC = object
+            case let .failure(error):
+                print(error)
+                self.presentAlert(withTitle: "", message: error.stringValue() , preferredStyle: .alert, actions: [WKAlertAction.init(title:"OK" , style: .default, handler: {})])
+            }
+        }
     }
     
     override func didDeactivate() {
@@ -107,6 +123,7 @@ class ACRemoteInterfaceController: WKInterfaceController {
     override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
         print(segueIdentifier)
         let context = ChooseModeContext()
+        context.id = smartAC.id
         context.property  = segueIdentifier
         switch segueIdentifier {
         case "fanLevel":
@@ -115,6 +132,7 @@ class ACRemoteInterfaceController: WKInterfaceController {
             context.modes = Modes.acModes
         }
         context.delegate = self
+        backFromSelection = true
         return context
     }
     

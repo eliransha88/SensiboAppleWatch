@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15705" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5ly-0r-49z">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16097" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5ly-0r-49z">
     <device id="watch44"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
     </dependencies>
     <scenes>
         <!--Devices-->
@@ -11,32 +11,43 @@
             <objects>
                 <controller title="Devices" id="5ly-0r-49z" customClass="DevicesInterfaceController" customModule="SmartAC_WatchKit_Extension">
                     <items>
-                        <table alignment="left" id="JAS-Fg-k3Y">
+                        <group width="1" alignment="left" layout="vertical" spacing="16" id="K9S-Dc-4Qb">
                             <items>
-                                <tableRow identifier="DeviceRowController" id="tLn-ag-ZWB" customClass="DeviceRowController" customModule="SmartAC_WatchKit_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="tQY-LJ-mgL">
-                                        <items>
-                                            <label alignment="left" verticalAlignment="center" text="Label" id="iJn-PT-lDP">
-                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
-                                            </label>
-                                            <label alignment="right" verticalAlignment="center" text="Label" id="OYX-VI-wda">
-                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
-                                            </label>
-                                        </items>
-                                        <connections>
-                                            <segue destination="AgC-eL-Hgc" kind="push" identifier="device" id="LzL-XN-CdY"/>
-                                        </connections>
-                                    </group>
+                                <button alignment="right" backgroundImage="arrow.clockwise" catalog="system" id="2ec-6i-BwZ">
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <connections>
-                                        <outlet property="deviceNameLabel" destination="iJn-PT-lDP" id="dxF-eO-Xoz"/>
-                                        <outlet property="deviceStatusLabel" destination="OYX-VI-wda" id="pLq-xl-ltE"/>
+                                        <action selector="refreshDevices" destination="5ly-0r-49z" id="wQ8-TM-EjY"/>
                                     </connections>
-                                </tableRow>
+                                </button>
+                                <table alignment="left" id="JAS-Fg-k3Y">
+                                    <items>
+                                        <tableRow identifier="DeviceRowController" id="tLn-ag-ZWB" customClass="DeviceRowController" customModule="SmartAC_WatchKit_Extension">
+                                            <group key="rootItem" width="1" alignment="left" id="tQY-LJ-mgL">
+                                                <items>
+                                                    <label alignment="left" verticalAlignment="center" text="Label" id="iJn-PT-lDP">
+                                                        <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                                    </label>
+                                                    <label alignment="right" verticalAlignment="center" text="Label" id="OYX-VI-wda">
+                                                        <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                    </label>
+                                                </items>
+                                                <connections>
+                                                    <segue destination="AgC-eL-Hgc" kind="push" identifier="device" id="LzL-XN-CdY"/>
+                                                </connections>
+                                            </group>
+                                            <connections>
+                                                <outlet property="deviceNameLabel" destination="iJn-PT-lDP" id="dxF-eO-Xoz"/>
+                                                <outlet property="deviceStatusLabel" destination="OYX-VI-wda" id="pLq-xl-ltE"/>
+                                            </connections>
+                                        </tableRow>
+                                    </items>
+                                </table>
                             </items>
-                        </table>
+                        </group>
                     </items>
                     <connections>
                         <outlet property="devicesTableView" destination="JAS-Fg-k3Y" id="w2u-sB-oBt"/>
+                        <outlet property="refershDevices" destination="2ec-6i-BwZ" id="bfB-rL-uE7"/>
                     </connections>
                 </controller>
             </objects>
@@ -176,14 +187,15 @@
             <point key="canvasLocation" x="468" y="345"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="cool" width="25" height="25"/>
-        <image name="fan" width="25" height="25"/>
-        <image name="minus.circle.fill" catalog="system" width="64" height="60"/>
-        <image name="plus.circle.fill" catalog="system" width="64" height="60"/>
-        <image name="power" catalog="system" width="64" height="62"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="XaV-fk-No7"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="arrow.clockwise" catalog="system" width="114" height="128"/>
+        <image name="cool" width="25" height="25"/>
+        <image name="fan" width="25" height="25"/>
+        <image name="minus.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="power" catalog="system" width="128" height="124"/>
+    </resources>
 </document>

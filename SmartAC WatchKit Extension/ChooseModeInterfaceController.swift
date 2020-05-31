@@ -65,7 +65,7 @@ class ChooseModeInterfaceController: WKInterfaceController {
     }
     
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
-        SensiboAPI.instance.setACStateProperty(with: deviceId, property: property  , newValue: modes[rowIndex]) { (result) in
+        SensiboAPI.instance.setACStateProperty(with: deviceId, property: property  , newValue: modes[rowIndex]) { result in
                 switch result {
                 case .success(let response):
                     self.delegate?.backFromChooseMode(acState: response.acState)
@@ -74,7 +74,7 @@ class ChooseModeInterfaceController: WKInterfaceController {
                     print(error)
                     self.presentAlert(withTitle: "", message: error.stringValue() , preferredStyle: .alert, actions: [WKAlertAction.init(title:"OK" , style: .default, handler: {})])
                 }
-            }
+        }
     }
     
 }
