@@ -73,7 +73,7 @@ struct ACState : Codable {
     }
     
     enum ACMode : String , Decodable {
-        case heat , cool , dry
+        case heat , cool , dry, auto
     }
     
     
@@ -85,6 +85,8 @@ struct ACState : Codable {
             return .red
         case .dry:
             return .white
+        case .auto:
+            return .gray
         }
     }
 

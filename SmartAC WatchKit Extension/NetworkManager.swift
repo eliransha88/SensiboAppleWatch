@@ -144,8 +144,6 @@ class NetworkManager : NSObject , URLSessionDelegate {
         var disposition: URLSession.AuthChallengeDisposition = .performDefaultHandling
         var credential: URLCredential?
         
-        print("received challenge")
-        
         if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {
             disposition = URLSession.AuthChallengeDisposition.useCredential
             credential = URLCredential(trust: challenge.protectionSpace.serverTrust!)
