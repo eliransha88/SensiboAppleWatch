@@ -110,7 +110,7 @@ class ACRemoteInterfaceController: WKInterfaceController {
     func updateUI() {
         tempDegreeLabel.setText("\(smartAC.acState.tempDegree)°C \(smartAC.acState.isPowerOn ? "On" : "Off")")
         acModeButton.setBackgroundImage(UIImage.init(named: smartAC.acState.acMode.rawValue))
-        acModeButton.setBackgroundColor(smartAC.acState.getACModeColor())
+        acModeButton.setBackgroundColor(smartAC.acState.acMode.color)
         
         acModeButton.setEnabled(smartAC.acState.isPowerOn)
         fanModeButton.setEnabled(smartAC.acState.isPowerOn)

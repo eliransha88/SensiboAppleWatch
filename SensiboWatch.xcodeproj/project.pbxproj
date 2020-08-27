@@ -129,20 +129,44 @@
 		49B09B2224F77FE0005596CF /* SensiboWatch WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				49B09B6024F79F91005596CF /* Network */,
+				49B09B5F24F79F81005596CF /* Notifications */,
+				49B09B5E24F79F6C005596CF /* Supporting Files */,
 				49B09B5C24F79ECE005596CF /* SmartAC.swift */,
 				49B09B4F24F79E53005596CF /* ACRemoteInterfaceController.swift */,
-				49B09B2924F77FE0005596CF /* Assets.xcassets */,
 				49B09B5224F79E53005596CF /* ChooseModeInterfaceController.swift */,
 				49B09B5324F79E53005596CF /* DevicesInterfaceController.swift */,
-				49B09B2524F77FE0005596CF /* ExtensionDelegate.swift */,
-				49B09B2B24F77FE0005596CF /* Info.plist */,
 				49B09B2324F77FE0005596CF /* InterfaceController.swift */,
-				49B09B5024F79E53005596CF /* NetworkManager.swift */,
-				49B09B2724F77FE0005596CF /* NotificationController.swift */,
-				49B09B2C24F77FE0005596CF /* PushNotificationPayload.apns */,
-				49B09B5124F79E53005596CF /* SensiboAPI.swift */,
 			);
 			path = "SensiboWatch WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		49B09B5E24F79F6C005596CF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49B09B2524F77FE0005596CF /* ExtensionDelegate.swift */,
+				49B09B2924F77FE0005596CF /* Assets.xcassets */,
+				49B09B2B24F77FE0005596CF /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49B09B5F24F79F81005596CF /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				49B09B2724F77FE0005596CF /* NotificationController.swift */,
+				49B09B2C24F77FE0005596CF /* PushNotificationPayload.apns */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		49B09B6024F79F91005596CF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				49B09B5024F79E53005596CF /* NetworkManager.swift */,
+				49B09B5124F79E53005596CF /* SensiboAPI.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,7 +456,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 27NF894P9T;
-				INFOPLIST_FILE = "SensiboWatch WatchKit Extension/Info.plist";
+				INFOPLIST_FILE = "SensiboWatch WatchKit Extension/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,7 +480,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 27NF894P9T;
-				INFOPLIST_FILE = "SensiboWatch WatchKit Extension/Info.plist";
+				INFOPLIST_FILE = "SensiboWatch WatchKit Extension/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

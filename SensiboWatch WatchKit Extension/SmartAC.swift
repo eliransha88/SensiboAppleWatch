@@ -9,49 +9,43 @@
 import Foundation
 import UIKit
 
-class SmartAC : Codable {
+class SmartAC: Codable {
     
-    var id : String
-    var connectionStatus : ConnectionStatus
-    var acState : ACState
+    var id: String
+    var connectionStatus: ConnectionStatus
+    var acState: ACState
+    private var room: Room
     
-    private var room  : Room
-    
-    var name : String? {
+    var name: String? {
         get {
             return room.name
         }
     }
+}
+
+struct Room: Codable {
+    var name: String
+    var icon: String
+}
+
+struct ConnectionStatus: Codable {
+    var isAlive: Bool
+    var lastSeen: LastSeen
+}
+
+struct LastSeen: Codable {
+    var secondsAgo: Int
+    var time: String
+}
+
+struct ACState: Codable {
+    var isPowerOn: Bool
+    var fanLevel: FanLevel
+    var tempUnit: String
+    var tempDegree: Int
+    var acMode: ACMode
     
-    enum CodingKeys : String , CodingKey {
-        case id , connectionStatus, acState , room
-    }
-}
-
-struct Room : Codable {
-    var name : String
-    var icon : String
-}
-
-struct ConnectionStatus : Codable {
-    var isAlive : Bool
-    var lastSeen : LastSeen
-    
-}
-
-struct LastSeen : Codable {
-    var secondsAgo : Int
-    var time : String
-}
-
-struct ACState : Codable {
-    var isPowerOn : Bool
-    var fanLevel : FanLevel
-    var tempUnit : String
-    var tempDegree : Int
-    var acMode : ACMode
-    
-    enum CodingKeys : String , CodingKey {
+    enum CodingKeys: String , CodingKey {
         case isPowerOn = "on"
         case fanLevel
         case tempUnit = "temperatureUnit"
@@ -60,36 +54,34 @@ struct ACState : Codable {
     }
     
     public func encode(to encoder: Encoder) throws {
-         var container = encoder.container(keyedBy: CodingKeys.self)
-         try container.encode(isPowerOn, forKey: .isPowerOn)
-         try container.encode(fanLevel, forKey: .fanLevel)
-         try container.encode(tempUnit, forKey: .tempUnit)
-         try container.encode(tempDegree, forKey: .tempDegree)
-         try container.encode(acMode.rawValue, forKey: .acMode)
-     }
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(isPowerOn, forKey: .isPowerOn)
+        try container.encode(fanLevel, forKey: .fanLevel)
+        try container.encode(tempUnit, forKey: .tempUnit)
+        try container.encode(tempDegree, forKey: .tempDegree)
+        try container.encode(acMode.rawValue, forKey: .acMode)
+    }
     
-    enum FanLevel : String , Codable {
+    enum FanLevel: String , Codable {
         case low , medium , high , auto
     }
     
-    enum ACMode : String , Decodable {
+    enum ACMode: String , Decodable {
         case heat , cool , dry, auto
-    }
-    
-    
-    func getACModeColor() -> UIColor {
-        switch self.acMode {
-        case .cool:
-            return .blue
-        case .heat:
-            return .red
-        case .dry:
-            return .white
-        case .auto:
-            return .gray
+        
+        var color: UIColor {
+            switch self {
+            case .cool:
+                return .blue
+            case .heat:
+                return .red
+            case .dry:
+                return .white
+            case .auto:
+                return .gray
+            }
         }
     }
-
 }
 
 struct Modes  {
