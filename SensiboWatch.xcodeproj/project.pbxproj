@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		49B09B1024F77FDE005596CF /* SensiboWatch WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 49B09B0F24F77FDE005596CF /* SensiboWatch WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		49B09B1624F77FDE005596CF /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B09B1424F77FDE005596CF /* Interface.storyboard */; };
+		49B09B1824F77FE0005596CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B09B1724F77FE0005596CF /* Assets.xcassets */; };
+		49B09B1F24F77FE0005596CF /* SensiboWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 49B09B1E24F77FE0005596CF /* SensiboWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		49B09B2424F77FE0005596CF /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B09B2324F77FE0005596CF /* InterfaceController.swift */; };
+		49B09B2624F77FE0005596CF /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B09B2524F77FE0005596CF /* ExtensionDelegate.swift */; };
+		49B09B2824F77FE0005596CF /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B09B2724F77FE0005596CF /* NotificationController.swift */; };
+		49B09B2A24F77FE0005596CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B09B2924F77FE0005596CF /* Assets.xcassets */; };
+		49B09B5424F79E53005596CF /* ACRemoteInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B09B4F24F79E53005596CF /* ACRemoteInterfaceController.swift */; };
+		49B09B5524F79E53005596CF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B09B5024F79E53005596CF /* NetworkManager.swift */; };
+		49B09B5624F79E53005596CF /* SensiboAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B09B5124F79E53005596CF /* SensiboAPI.swift */; };
+		49B09B5724F79E53005596CF /* ChooseModeInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B09B5224F79E53005596CF /* ChooseModeInterfaceController.swift */; };
+		49B09B5824F79E53005596CF /* DevicesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B09B5324F79E53005596CF /* DevicesInterfaceController.swift */; };
+		49B09B5D24F79ECE005596CF /* SmartAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B09B5C24F79ECE005596CF /* SmartAC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		49B09B1124F77FDE005596CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49B09B0524F77FDE005596CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49B09B0E24F77FDE005596CF;
+			remoteInfo = "SensiboWatch WatchKit App";
+		};
+		49B09B2024F77FE0005596CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49B09B0524F77FDE005596CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49B09B1D24F77FE0005596CF;
+			remoteInfo = "SensiboWatch WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		49B09B3224F77FE0005596CF /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				49B09B1F24F77FE0005596CF /* SensiboWatch WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49B09B3624F77FE0005596CF /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				49B09B1024F77FDE005596CF /* SensiboWatch WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		49B09B0B24F77FDE005596CF /* SensiboWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensiboWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49B09B0F24F77FDE005596CF /* SensiboWatch WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SensiboWatch WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49B09B1524F77FDE005596CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		49B09B1724F77FE0005596CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49B09B1924F77FE0005596CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49B09B1E24F77FE0005596CF /* SensiboWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SensiboWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49B09B2324F77FE0005596CF /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		49B09B2524F77FE0005596CF /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		49B09B2724F77FE0005596CF /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		49B09B2924F77FE0005596CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49B09B2B24F77FE0005596CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49B09B2C24F77FE0005596CF /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		49B09B4F24F79E53005596CF /* ACRemoteInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACRemoteInterfaceController.swift; sourceTree = "<group>"; };
+		49B09B5024F79E53005596CF /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		49B09B5124F79E53005596CF /* SensiboAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensiboAPI.swift; sourceTree = "<group>"; };
+		49B09B5224F79E53005596CF /* ChooseModeInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseModeInterfaceController.swift; sourceTree = "<group>"; };
+		49B09B5324F79E53005596CF /* DevicesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesInterfaceController.swift; sourceTree = "<group>"; };
+		49B09B5C24F79ECE005596CF /* SmartAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartAC.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49B09B1B24F77FE0005596CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49B09B0424F77FDE005596CF = {
+			isa = PBXGroup;
+			children = (
+				49B09B1324F77FDE005596CF /* SensiboWatch WatchKit App */,
+				49B09B2224F77FE0005596CF /* SensiboWatch WatchKit Extension */,
+				49B09B0C24F77FDE005596CF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		49B09B0C24F77FDE005596CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49B09B0B24F77FDE005596CF /* SensiboWatch.app */,
+				49B09B0F24F77FDE005596CF /* SensiboWatch WatchKit App.app */,
+				49B09B1E24F77FE0005596CF /* SensiboWatch WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49B09B1324F77FDE005596CF /* SensiboWatch WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				49B09B1424F77FDE005596CF /* Interface.storyboard */,
+				49B09B1724F77FE0005596CF /* Assets.xcassets */,
+				49B09B1924F77FE0005596CF /* Info.plist */,
+			);
+			path = "SensiboWatch WatchKit App";
+			sourceTree = "<group>";
+		};
+		49B09B2224F77FE0005596CF /* SensiboWatch WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				49B09B5C24F79ECE005596CF /* SmartAC.swift */,
+				49B09B4F24F79E53005596CF /* ACRemoteInterfaceController.swift */,
+				49B09B2924F77FE0005596CF /* Assets.xcassets */,
+				49B09B5224F79E53005596CF /* ChooseModeInterfaceController.swift */,
+				49B09B5324F79E53005596CF /* DevicesInterfaceController.swift */,
+				49B09B2524F77FE0005596CF /* ExtensionDelegate.swift */,
+				49B09B2B24F77FE0005596CF /* Info.plist */,
+				49B09B2324F77FE0005596CF /* InterfaceController.swift */,
+				49B09B5024F79E53005596CF /* NetworkManager.swift */,
+				49B09B2724F77FE0005596CF /* NotificationController.swift */,
+				49B09B2C24F77FE0005596CF /* PushNotificationPayload.apns */,
+				49B09B5124F79E53005596CF /* SensiboAPI.swift */,
+			);
+			path = "SensiboWatch WatchKit Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49B09B0A24F77FDE005596CF /* SensiboWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49B09B3724F77FE0005596CF /* Build configuration list for PBXNativeTarget "SensiboWatch" */;
+			buildPhases = (
+				49B09B0924F77FDE005596CF /* Resources */,
+				49B09B3624F77FE0005596CF /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49B09B1224F77FDE005596CF /* PBXTargetDependency */,
+			);
+			name = SensiboWatch;
+			productName = SensiboWatch;
+			productReference = 49B09B0B24F77FDE005596CF /* SensiboWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		49B09B0E24F77FDE005596CF /* SensiboWatch WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49B09B3324F77FE0005596CF /* Build configuration list for PBXNativeTarget "SensiboWatch WatchKit App" */;
+			buildPhases = (
+				49B09B0D24F77FDE005596CF /* Resources */,
+				49B09B3224F77FE0005596CF /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49B09B2124F77FE0005596CF /* PBXTargetDependency */,
+			);
+			name = "SensiboWatch WatchKit App";
+			productName = "SensiboWatch WatchKit App";
+			productReference = 49B09B0F24F77FDE005596CF /* SensiboWatch WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		49B09B1D24F77FE0005596CF /* SensiboWatch WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49B09B2F24F77FE0005596CF /* Build configuration list for PBXNativeTarget "SensiboWatch WatchKit Extension" */;
+			buildPhases = (
+				49B09B1A24F77FE0005596CF /* Sources */,
+				49B09B1B24F77FE0005596CF /* Frameworks */,
+				49B09B1C24F77FE0005596CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SensiboWatch WatchKit Extension";
+			productName = "SensiboWatch WatchKit Extension";
+			productReference = 49B09B1E24F77FE0005596CF /* SensiboWatch WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49B09B0524F77FDE005596CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = "Eliran Sharabi";
+				TargetAttributes = {
+					49B09B0A24F77FDE005596CF = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					49B09B0E24F77FDE005596CF = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					49B09B1D24F77FE0005596CF = {
+						CreatedOnToolsVersion = 11.6;
+					};
+				};
+			};
+			buildConfigurationList = 49B09B0824F77FDE005596CF /* Build configuration list for PBXProject "SensiboWatch" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 49B09B0424F77FDE005596CF;
+			productRefGroup = 49B09B0C24F77FDE005596CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49B09B0A24F77FDE005596CF /* SensiboWatch */,
+				49B09B0E24F77FDE005596CF /* SensiboWatch WatchKit App */,
+				49B09B1D24F77FE0005596CF /* SensiboWatch WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49B09B0924F77FDE005596CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49B09B0D24F77FDE005596CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49B09B1824F77FE0005596CF /* Assets.xcassets in Resources */,
+				49B09B1624F77FDE005596CF /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49B09B1C24F77FE0005596CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49B09B2A24F77FE0005596CF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49B09B1A24F77FE0005596CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49B09B5D24F79ECE005596CF /* SmartAC.swift in Sources */,
+				49B09B2824F77FE0005596CF /* NotificationController.swift in Sources */,
+				49B09B5524F79E53005596CF /* NetworkManager.swift in Sources */,
+				49B09B2624F77FE0005596CF /* ExtensionDelegate.swift in Sources */,
+				49B09B2424F77FE0005596CF /* InterfaceController.swift in Sources */,
+				49B09B5824F79E53005596CF /* DevicesInterfaceController.swift in Sources */,
+				49B09B5624F79E53005596CF /* SensiboAPI.swift in Sources */,
+				49B09B5424F79E53005596CF /* ACRemoteInterfaceController.swift in Sources */,
+				49B09B5724F79E53005596CF /* ChooseModeInterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49B09B1224F77FDE005596CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49B09B0E24F77FDE005596CF /* SensiboWatch WatchKit App */;
+			targetProxy = 49B09B1124F77FDE005596CF /* PBXContainerItemProxy */;
+		};
+		49B09B2124F77FE0005596CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49B09B1D24F77FE0005596CF /* SensiboWatch WatchKit Extension */;
+			targetProxy = 49B09B2024F77FE0005596CF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		49B09B1424F77FDE005596CF /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49B09B1524F77FDE005596CF /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		49B09B2D24F77FE0005596CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		49B09B2E24F77FE0005596CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49B09B3024F77FE0005596CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 27NF894P9T;
+				INFOPLIST_FILE = "SensiboWatch WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = eliransha.SensiboWatch.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		49B09B3124F77FE0005596CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 27NF894P9T;
+				INFOPLIST_FILE = "SensiboWatch WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = eliransha.SensiboWatch.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		49B09B3424F77FE0005596CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 27NF894P9T;
+				IBSC_MODULE = SensiboWatch_WatchKit_Extension;
+				INFOPLIST_FILE = "SensiboWatch WatchKit App/Info.plist";
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = eliransha.SensiboWatch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		49B09B3524F77FE0005596CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 27NF894P9T;
+				IBSC_MODULE = SensiboWatch_WatchKit_Extension;
+				INFOPLIST_FILE = "SensiboWatch WatchKit App/Info.plist";
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = eliransha.SensiboWatch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		49B09B3824F77FE0005596CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 27NF894P9T;
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = eliransha.SensiboWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		49B09B3924F77FE0005596CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 27NF894P9T;
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = eliransha.SensiboWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49B09B0824F77FDE005596CF /* Build configuration list for PBXProject "SensiboWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49B09B2D24F77FE0005596CF /* Debug */,
+				49B09B2E24F77FE0005596CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49B09B2F24F77FE0005596CF /* Build configuration list for PBXNativeTarget "SensiboWatch WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49B09B3024F77FE0005596CF /* Debug */,
+				49B09B3124F77FE0005596CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49B09B3324F77FE0005596CF /* Build configuration list for PBXNativeTarget "SensiboWatch WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49B09B3424F77FE0005596CF /* Debug */,
+				49B09B3524F77FE0005596CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49B09B3724F77FE0005596CF /* Build configuration list for PBXNativeTarget "SensiboWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49B09B3824F77FE0005596CF /* Debug */,
+				49B09B3924F77FE0005596CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49B09B0524F77FDE005596CF /* Project object */;
+}

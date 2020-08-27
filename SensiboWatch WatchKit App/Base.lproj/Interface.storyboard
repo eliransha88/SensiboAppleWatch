@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16097.2" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8Xf-nT-jlH">
+    <device id="watch44"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
+    </dependencies>
+    <scenes>
+        <!--Devices-->
+        <scene sceneID="qjb-zG-4la">
+            <objects>
+                <controller title="Devices" id="8Xf-nT-jlH" customClass="DevicesInterfaceController" customModule="SensiboWatch_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" spacing="16" id="e4q-5B-n1M">
+                            <items>
+                                <button alignment="right" backgroundImage="arrow.clockwise" catalog="system" id="iZt-nT-IFu">
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="refreshDevices" destination="8Xf-nT-jlH" id="7KG-p9-Wnk"/>
+                                    </connections>
+                                </button>
+                                <table alignment="left" id="USa-5u-usM">
+                                    <items>
+                                        <tableRow identifier="DeviceRowController" id="IjD-nl-cmp" customClass="DeviceRowController" customModule="SensiboWatch_WatchKit_App" customModuleProvider="target">
+                                            <group key="rootItem" width="1" alignment="left" id="7ng-wD-esa">
+                                                <items>
+                                                    <label alignment="left" verticalAlignment="center" text="Label" id="vIu-OE-yLJ">
+                                                        <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                                    </label>
+                                                    <label alignment="right" verticalAlignment="center" text="Label" id="waG-gd-oyp">
+                                                        <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                    </label>
+                                                </items>
+                                                <connections>
+                                                    <segue destination="hlm-2n-3Gb" kind="push" identifier="device" id="2xV-jB-JFc"/>
+                                                </connections>
+                                            </group>
+                                            <connections>
+                                                <outlet property="deviceNameLabel" destination="vIu-OE-yLJ" id="QFw-lU-fRv"/>
+                                                <outlet property="deviceStatusLabel" destination="waG-gd-oyp" id="Ele-Ou-tqj"/>
+                                            </connections>
+                                        </tableRow>
+                                    </items>
+                                </table>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="devicesTableView" destination="USa-5u-usM" id="8dS-ZC-ud1"/>
+                        <outlet property="refershDevices" destination="iZt-nT-IFu" id="e3u-0Q-vYf"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="24" y="-53"/>
+        </scene>
+        <!--ACRemoteInterfaceController-->
+        <scene sceneID="W6B-zT-2WL">
+            <objects>
+                <controller identifier="ACRemoteInterfaceController" fullBounds="YES" id="hlm-2n-3Gb" customClass="ACRemoteInterfaceController" customModule="SensiboWatch_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" height="1" alignment="center" verticalAlignment="center" layout="vertical" id="JlY-NH-rly">
+                            <items>
+                                <group width="1" alignment="left" id="cIg-xj-ubj">
+                                    <items>
+                                        <button width="40" height="40" alignment="center" verticalAlignment="center" backgroundImage="plus.circle.fill" catalog="system" id="APG-zQ-s8G">
+                                            <color key="backgroundColor" red="0.82489166489999999" green="0.095718854019999994" blue="0.12041797949999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="setTemperatureUp" destination="hlm-2n-3Gb" id="Ui5-Rk-XOE"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="center" verticalAlignment="center" id="5yy-0V-II4">
+                                    <items>
+                                        <button width="40" height="40" alignment="left" verticalAlignment="center" backgroundImage="fan" id="hg7-wH-GcV">
+                                            <color key="backgroundColor" red="0.98209856250000005" green="0.98657392190000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <segue destination="5Rc-72-JSB" kind="push" identifier="fanLevel" id="cHf-yP-azX"/>
+                                            </connections>
+                                        </button>
+                                        <group width="100" height="95" alignment="center" verticalAlignment="center" layout="vertical" id="C7o-JZ-4Uf">
+                                            <items>
+                                                <button width="50" height="50" alignment="center" verticalAlignment="center" backgroundImage="power" catalog="system" id="Bsu-7q-42e">
+                                                    <color key="backgroundColor" red="0.98209856250000005" green="0.98657392190000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <connections>
+                                                        <action selector="powerOnOff" destination="hlm-2n-3Gb" id="M5t-j1-tFB"/>
+                                                    </connections>
+                                                </button>
+                                                <group width="1" alignment="left" verticalAlignment="bottom" id="qtg-T6-i9K">
+                                                    <items>
+                                                        <textField alignment="center" verticalAlignment="center" text="25 off" id="Aqi-5B-5Eh">
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </textField>
+                                                    </items>
+                                                </group>
+                                            </items>
+                                        </group>
+                                        <button width="40" height="40" alignment="right" verticalAlignment="center" backgroundImage="cool" id="CgJ-vU-I9b">
+                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <segue destination="5Rc-72-JSB" kind="push" identifier="mode" id="9ef-Xo-GVd"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" verticalAlignment="bottom" id="rhy-e9-uOL">
+                                    <items>
+                                        <button width="40" height="40" alignment="center" verticalAlignment="center" backgroundImage="minus.circle.fill" catalog="system" id="dHl-fs-hgi">
+                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="setTemperatureDown" destination="hlm-2n-3Gb" id="qYs-Nb-k94"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="acModeButton" destination="CgJ-vU-I9b" id="Rzm-CC-GaK"/>
+                        <outlet property="fanModeButton" destination="hg7-wH-GcV" id="ry6-uK-aZi"/>
+                        <outlet property="powerButton" destination="Bsu-7q-42e" id="Tfg-zE-par"/>
+                        <outlet property="tempDegreeLabel" destination="Aqi-5B-5Eh" id="Ok2-be-igb"/>
+                        <outlet property="tempDownButton" destination="dHl-fs-hgi" id="LMn-Fc-ISb"/>
+                        <outlet property="tempUpButton" destination="APG-zQ-s8G" id="cF4-rp-tUE"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-89" y="280"/>
+        </scene>
+        <!--Choose Mode Interface Controller-->
+        <scene sceneID="0bD-vN-Hiq">
+            <objects>
+                <controller id="5Rc-72-JSB" customClass="ChooseModeInterfaceController" customModule="SensiboWatch_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="Mf7-KK-muZ">
+                            <items>
+                                <tableRow identifier="ModeRow" id="ki0-NQ-HEt" customClass="RowController" customModule="SensiboWatch_WatchKit_App" customModuleProvider="target">
+                                    <group key="rootItem" width="1" alignment="left" id="znG-7F-rqF">
+                                        <items>
+                                            <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="QMz-Mq-SQr"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="modeLabel" destination="QMz-Mq-SQr" id="lZd-F3-yTL"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="tableView" destination="Mf7-KK-muZ" id="2wy-uL-VVG"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="183" y="279"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="PRG-ST-zNb">
+            <objects>
+                <notificationController id="sRC-rG-0xL">
+                    <items>
+                        <label alignment="left" text="Alert Label" numberOfLines="0" id="NDV-kM-k7n"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="aP7-oF-HkE"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="NDV-kM-k7n" id="gET-iQ-ppH"/>
+                        <segue destination="f9p-5w-LlY" kind="relationship" relationship="dynamicNotificationInterface" id="zTo-ql-neO"/>
+                        <segue destination="EkV-uy-0A8" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="cWm-iP-OnQ"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="4KR-fX-3K3">
+            <objects>
+                <controller id="f9p-5w-LlY" customClass="NotificationController" customModule="SensiboWatch_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="r4R-go-cDz">
+            <objects>
+                <controller id="EkV-uy-0A8" customClass="NotificationController" customModule="SensiboWatch_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="345"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="9ef-Xo-GVd"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="arrow.clockwise" catalog="system" width="114" height="128"/>
+        <image name="cool" width="25" height="25"/>
+        <image name="fan" width="25" height="25"/>
+        <image name="minus.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="power" catalog="system" width="128" height="124"/>
+    </resources>
+</document>
