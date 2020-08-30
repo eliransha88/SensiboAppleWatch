@@ -24,7 +24,7 @@ class SensiboAPI {
         case acState(deviceId : String)
         case acStateProperty(deviceId : String , property : String)
         
-        func getPath() -> String {
+        var path: String {
             switch self {
             case .devices:
                 return "users/me/pods"
@@ -76,14 +76,7 @@ class SensiboAPI {
     }
     
     func setACState(with deviceId : String , acState : ACState , completion : @escaping RequestHandler<ACStateResponse>) {
-        let params : NetworkManager.Parameters
-        do {
-            let data = try JSONEncoder().encode(ACStateRequest(acState: acState))
-            params = try (JSONSerialization.jsonObject(with: data, options: []) as? NetworkManager.Parameters)!
-        }catch {
-            completion(.failure(.decodeError))
-            return
-        }
+        guard let params = ACStateRequest(acState: acState).json else { return completion(.failure(.decodeError) )}
         performRequest(path: .acState(deviceId: deviceId), method: .post, params: params) { (result : Result<Response<ACStateResponse> , NetworkError>) in
             switch result {
             case .success(let response):
@@ -110,7 +103,7 @@ class SensiboAPI {
         var sensiboUrlParams = urlParams
         sensiboUrlParams["apiKey"] = apiKey
         
-        manager.performRequest(urlString: path.getPath() , httpMethod: method, urlParams: sensiboUrlParams, params: params,
+        manager.performRequest(urlString: path.path , httpMethod: method, urlParams: sensiboUrlParams, params: params,
                                success: { (object ) in
             completion(.success(object))
         }) { (error) in
@@ -124,6 +117,15 @@ class SensiboAPI {
 
 struct ACStateRequest : Codable {
     var acState : ACState
+    
+    var json: NetworkManager.Parameters? {
+        do {
+        let data = try JSONEncoder().encode(ACStateRequest(acState: acState))
+        return try (JSONSerialization.jsonObject(with: data, options: []) as? NetworkManager.Parameters)!
+        } catch {
+            return nil
+        }
+    }
 }
 
 struct ACStateResponse : Decodable {
